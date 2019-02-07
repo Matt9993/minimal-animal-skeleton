@@ -35,7 +35,10 @@ Route::post('/update-post', 'PostController@update_data');
 Route::post('/delete-post', 'PostController@delete_data');
 
 // Admin list all galleries
-Route::get('/galleries', 'GalleryController@list_all');
+Route::get('/galleries', function () {
+    return view('galleries');
+});
+//Route::get('/galleries', 'UserController@store');
  
 Auth::routes();
 

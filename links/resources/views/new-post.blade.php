@@ -2,8 +2,8 @@
 @section('content')
 <!-- Post Section -->
 <div class="container">
+<h3 class="jumbotron">Új hír létrehozása</h3>
         <div class="row">
-            <h1>Hozz létre új hírt</h1>
             <form action="/submit-post" method="post">
                 @if ($errors->any())
                     <div class="alert alert-danger" role="alert">
