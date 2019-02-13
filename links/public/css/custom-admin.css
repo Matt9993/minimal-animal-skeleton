@@ -1,0 +1,29 @@
+#div1 {
+    width: 70px;
+    min-height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    border-radius: 4px;
+}
+#div2 {
+    min-width: 250px;
+    width: auto;
+    min-height: 70px;
+    height: auto;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    border-radius: 4px;
+}
+
+#div3 {
+    width: 550px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    border-radius: 4px;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+}

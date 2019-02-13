@@ -13,6 +13,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom-admin.css') }}" rel="stylesheet">
+    <script type="text/javascript" src="{{ asset('js/dragndrop.js') }}"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     
 </head>
@@ -57,8 +59,11 @@
                                     <a href="{{ url('/list-posts') }}" >
                                         Hírek
                                     </a>
+                                    <a href="{{ url('/add-gallery') }}" >
+                                        Új Album
+                                    </a>
                                     <a href="{{ url('/galleries') }}" >
-                                        Galériák
+                                        Albumok
                                     </a>
                                 </div>
                             

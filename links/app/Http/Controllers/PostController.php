@@ -15,6 +15,7 @@ class PostController extends Controller
     function list_all()
     {
         $posts = \App\Post::orderBy('created_at')->get();
+        
         return view('list-posts', ['posts' => $posts]);
     }
 

@@ -5,7 +5,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
-                <div class="panel-heading">Hírek</div>
+                <div class="panel-heading">
+                <h3 class="jumbotron">Hírek</h3>
+                </div>
 
                 <div class="panel-body">
                     <div class="table-responsive">

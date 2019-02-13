@@ -35,10 +35,25 @@ Route::post('/update-post', 'PostController@update_data');
 Route::post('/delete-post', 'PostController@delete_data');
 
 // Admin list all galleries
-Route::get('/galleries', function () {
-    return view('galleries');
+Route::get('/galleries','AlbumController@list_albums' );
+
+Route::get('/add-gallery', function () {
+    return view('gallery-upload');
 });
-//Route::get('/galleries', 'UserController@store');
+
+// Create new album
+Route::post('/form', 'AlbumController@store');
+
+// Album edit, file upload
+Route::post('/form-add', 'AlbumController@store');
+
+Route::post('/edit-album', 'AlbumController@edit');
+
+Route::post('/read-album', 'AlbumController@read_one');
+
+Route::post('/delete-album', 'AlbumController@delete_album');
+
+Route::post('delete-pics', 'AlbumController@delete_picture');
  
 Auth::routes();
 
