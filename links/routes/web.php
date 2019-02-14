@@ -45,7 +45,7 @@ Route::get('/add-gallery', function () {
 Route::post('/form', 'AlbumController@store');
 
 // Album edit, file upload
-Route::post('/form-add', 'AlbumController@store');
+Route::post('/form-add', 'AlbumController@add_pic_in_edit');
 
 Route::post('/edit-album', 'AlbumController@edit');
 
@@ -54,6 +54,9 @@ Route::post('/read-album', 'AlbumController@read_one');
 Route::post('/delete-album', 'AlbumController@delete_album');
 
 Route::post('delete-pics', 'AlbumController@delete_picture');
+
+// Check tinymce
+Route::get('/editor', 'TinymceController@index');
  
 Auth::routes();
 

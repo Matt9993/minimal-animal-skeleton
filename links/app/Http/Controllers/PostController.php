@@ -22,21 +22,16 @@ class PostController extends Controller
     function read_one(Request $request)
     {
         $post = \App\Post::find($request->id);
-        return view('edit-post', ['post' => $post]);
+        $title = $post->title;
+        $content = $post->description; 
+        return view('edit-post', ['postId' => $request->id,'title' => $title, 'content' => $content]);
     }
 
     function add_post(Request $request)
     {
-        $data = $request->validate([
-            'title' => 'required|max:255',
-            'topic' => 'required|max:255',
-            'description' => 'required|max:1000',
-        ]);
-        
         $post = new Post;
         $post->title = $request->title;
-        $post->topic = $request->topic;
-        $post->description = $request->description;
+        $post->description = $request->content;
         $post->save();
     
         return redirect('/list-posts');
@@ -48,17 +43,13 @@ class PostController extends Controller
         if ($request->title == null || $request->title == ""){
             $request->title = $post->title;
         }
-        if ($request->topic == null || $request->topic == ""){
-            $request->topic = $post->topic;
-        }
-        if ($request->description == null || $request->description == ""){
-            $request->description = $post->description;
+        if ($request->content == null || $request->content == ""){
+            $request->content = $post->content;
         }
         
-        $post->update(['title' => $request->title, 'topic' => $request->topic,
-        'description' => $request->description]);
+        $post->update(['title' => $request->title, 'description' => $request->content]);
 
-        return view('home');
+        return redirect('/list-posts');
     }
 
     function delete_data(Request $request)

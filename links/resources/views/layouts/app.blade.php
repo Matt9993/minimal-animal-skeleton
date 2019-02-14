@@ -53,7 +53,7 @@
                         @else
                             <div class="nav-tabs">
                                 <div class="nav-pills">
-                                    <a href="{{ url('/add-post') }}" >
+                                    <a href="{{ url('/editor') }}" >
                                         Új Hír
                                     </a>
                                     <a href="{{ url('/list-posts') }}" >
