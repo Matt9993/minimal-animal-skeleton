@@ -53,7 +53,7 @@
                         @else
                             <div class="nav-tabs">
                                 <ul class="nav nav-tabs" id="nav-tab-ul">
-                                    <li><a href="{{ url('/home') }}" >
+                                    <li><a class="active" href="{{ url('/home') }}" >
                                             Főoldal
                                         </a></li>
                                     <li><a href="{{ url('/editor') }}" >
@@ -68,30 +68,30 @@
                                     <li><a href="{{ url('/galleries') }}" >
                                         Albumok
                                     </a></li>
+                                    <li class="dropdown">
+                                        <ul class="nav nav-tabs">
+                                            <li style="text-align:right;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                                </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="{{ route('logout') }}"
+                                                        onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                                                        Logout
+                                                    </a>
+
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                        {{ csrf_field() }}
+                                                    </form>
+                                                </li>
+                                            </li>
+                                            </ul>
+                                        </ul>
+
+                                    </li>
                                 </ul>
 
-                                <li class="dropdown" style="width: 100%">
-                                    <ul class="nav nav-tabs" style="width: 100%">
-                                        <li style="width: 100%; text-align:right;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                                        {{ Auth::user()->name }} <span class="caret"></span>
-                                            </a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
-                                                    Logout
-                                                </a>
-
-                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                    {{ csrf_field() }}
-                                                </form>
-                                            </li>
-                                        </li>
-                                        </ul>
-                                    </ul>
-
-                                </li>
                             </div>
                         @endguest
                     </ul>

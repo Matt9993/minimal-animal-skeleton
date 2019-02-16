@@ -26,12 +26,12 @@
                                     <td>{{ $post->title }}</td>
                                     <td>{{ $post->topic }}</td>
                                     <td>{{ substr($post->description, 0, 50) }}</td>
-                                    <td>
+                                    <td style="text-align: center;">
                                         <form method="post" action="/read-one" accept-charset="UTF-8">
                                         <input type="hidden" value="{{$post->id}}" id="{{$post->id}}" name="id"/>
                                                 {{ csrf_field() }}
 
-                                                <button type="submit" class="btn btn-primary">Szerkesztés</button>
+                                                <button type="submit" class="btn btn-primary" style="width: 90%; margin: 0 auto">Szerkesztés</button>
                                                 
                                         </form>
                                         
@@ -39,7 +39,7 @@
                                         <input type="hidden" value="{{$post->id}}" id="{{$post->id}}" name="id" />
                                             {{ csrf_field() }}
 
-                                            <button type="submit" class="btn btn-danger delete-object delete">Törlés</button>
+                                            <button type="submit" style="width:90%; margin: 1% auto 0 auto" class="btn btn-danger delete-object delete">Törlés</button>
                                             
                                         </form>
                                     </td>
