@@ -56,7 +56,7 @@
                                     <li><a href="{{ url('/home') }}" >
                                             Főoldal
                                         </a></li>
-                                    <li><a href="{{ url('/add-post') }}" >
+                                    <li><a href="{{ url('/editor') }}" >
                                         Új Hír
                                         </a></li>
                                     <li><a href="{{ url('/list-posts') }}" >

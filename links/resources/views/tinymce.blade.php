@@ -2,19 +2,18 @@
  
 @section('content')
 <div class="container">
-<h3 class="jumbotron">Hír szerkesztése</h3>
+<h3 class="jumbotron">Új hír létrehozása</h3>
     <div class="row">
-        <form action="/update-post" method="post">
+        <form action="/submit-post" method="post">
         {!! csrf_field() !!}
             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                 <label for="title">Cím</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Cím" value="{{ $title }}">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Cím" value="{{ old('title') }}">
                 @if($errors->has('title'))
                     <span class="help-block">{{ $errors->first('title') }}</span>
                 @endif
             </div>
-            <textarea id="description" name="content" class="form-control my-editor">{{ $content }}</textarea>
-            <input type="hidden" value="{{$postId}}" id="title" name="id" />
+            <textarea id="description" name="content" class="form-control my-editor">{!! old('content', $content) !!}</textarea>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>

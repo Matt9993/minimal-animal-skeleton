@@ -13,6 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <div>
+                    Üdv az ENERWAY Admin felületén
+                    </div>
                 </div>
             </div>
         </div>
