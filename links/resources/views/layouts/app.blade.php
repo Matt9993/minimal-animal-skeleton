@@ -16,7 +16,7 @@
     <link href="{{ asset('css/custom-admin.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{ asset('js/dragndrop.js') }}"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    
+
 </head>
 <body>
     <div id="app">
@@ -33,58 +33,64 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a id="brand" class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Links') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
+                    <!-- <ul class="nav navbar-nav">
                         &nbsp;
-                    </ul>
+                    </ul> -->
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right" id="navbar-pills">
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <div class="nav-tabs">
-                                <div class="nav-pills">
-                                    <a href="{{ url('/add-post') }}" >
+                                <ul class="nav nav-tabs" id="nav-tab-ul">
+                                    <li><a href="{{ url('/home') }}" >
+                                            Főoldal
+                                        </a></li>
+                                    <li><a href="{{ url('/add-post') }}" >
                                         Új Hír
-                                    </a>
-                                    <a href="{{ url('/list-posts') }}" >
+                                        </a></li>
+                                    <li><a href="{{ url('/list-posts') }}" >
                                         Hírek
-                                    </a>
-                                    <a href="{{ url('/add-gallery') }}" >
+                                        </a></li>
+                                    <li><a href="{{ url('/add-gallery') }}" >
                                         Új Album
-                                    </a>
-                                    <a href="{{ url('/galleries') }}" >
+                                    </a></li>
+                                    <li><a href="{{ url('/galleries') }}" >
                                         Albumok
-                                    </a>
-                                </div>
-                            
-                                <li class="dropdown"> 
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                    </a></li>
+                                </ul>
+
+                                <li class="dropdown" style="width: 100%">
+                                    <ul class="nav nav-tabs" style="width: 100%">
+                                        <li style="width: 100%; text-align:right;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                         {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
-
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                                Logout
                                             </a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                                    Logout
+                                                </a>
 
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                {{ csrf_field() }}
-                                            </form>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    {{ csrf_field() }}
+                                                </form>
+                                            </li>
                                         </li>
+                                        </ul>
                                     </ul>
+
                                 </li>
                             </div>
                         @endguest

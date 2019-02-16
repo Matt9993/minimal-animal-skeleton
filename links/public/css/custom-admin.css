@@ -27,3 +27,30 @@ img {
     width: 50px;
     height: 50px;
 }
+
+@media screen and (max-width: 767px) {
+    #nav-tab-ul {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+
+    #navbar-pills {
+        padding: 0;
+    }
+
+    #nav-tab-ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    #brand {
+        line-height: 100%;
+    }
+}
+
+@media screen and (max-width: 1152px) {
+
+}
+
